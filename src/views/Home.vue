@@ -1,18 +1,21 @@
 <template>
-  <div class="home">
-    <h1>Welcome to Your Vue.js App</h1>
-    <Main/>
-  </div>
+
+    <div class="home">
+        <Footer />
+    </div>
 </template>
-
 <script>
-import Main from '@/components/Main.vue'
+import Footer from "./Footer.vue";
 export default {
-name: 'Home',
-components:{ Main }
-}
+    components: {
+        Footer,
+    },
+};
 </script>
-
 <style>
-
+.home {
+    height: 100vh;
+}
 </style>
+
+
