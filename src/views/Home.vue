@@ -1,6 +1,27 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <h1>Welcome to Your Vue.js App</h1>
-  </div>
+
+    <div class="home">
+       <Header />
+        <Main />
+        <Footer />
+    </div>
 </template>
+<script>
+import Main from '../components/Main.vue';
+import Footer from "./Footer.vue";
+import Header from './Header.vue';
+export default {
+    components: {
+        Footer,
+        Header,
+        Main,
+    },
+};
+</script>
+<style>
+.home {
+    height: 100vh;
+}
+</style>
+
+
