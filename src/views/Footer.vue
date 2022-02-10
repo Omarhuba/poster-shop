@@ -32,7 +32,8 @@ export default {};
 .footer {
     background-color: #292929;
     height: 320px;
-    width: 1438px;
+    width: 1440px;
+    align-items: center;
     color: white;
     display: flex;
     justify-content: space-around;
