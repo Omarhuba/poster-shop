@@ -1,4 +1,5 @@
 <template>
+
     <div class="home">
         <Footer />
     </div>
@@ -16,3 +17,5 @@ export default {
     height: 100vh;
 }
 </style>
+
+
