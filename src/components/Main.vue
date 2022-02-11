@@ -82,13 +82,13 @@ ul {
         width: 250px;
     }
     button {
-        width: 150px;
+        width: 160px;
         height: 30px;
         border-radius: 5px;
         border: none;
         background-color: red;
         color: white;
-        font-weight: 800;
+        font-weight: 600;
         cursor: pointer;
     }
 }
@@ -102,6 +102,7 @@ ul {
         border: none;
         border-radius: 5px;
         margin: 1rem;
+        cursor: pointer;
     }
 }
 </style>

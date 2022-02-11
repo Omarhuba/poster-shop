@@ -25,6 +25,8 @@ body{
 }
 .home {
     height: 100%;
+    width: 1440px;
+    margin: auto;
 }
 </style>
 
