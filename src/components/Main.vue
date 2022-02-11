@@ -15,7 +15,14 @@
                 </li>
             </router-link>
         </ul>
-    </div>
+
+        <article class="pagination">
+            <span>
+                <button @click="prev">Previuos Page</button>
+                <button @click="next">Next Page</button>
+            </span>
+        </article>
+  </div>
 
 </template>
 
