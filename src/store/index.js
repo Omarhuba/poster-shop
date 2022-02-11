@@ -8,6 +8,7 @@ const PAGE_SIZE = 6
 export default new Vuex.Store({
   state: {
     data:[...Data],
+    searchResults: [],
     page : 1,
   },
   mutations: {
@@ -16,9 +17,30 @@ export default new Vuex.Store({
     },
     nextPage(state){
       state.page ++
-    }
+    },
+      updateSearchResult(state, payload){
+      
+      if(payload.length > 1){
+        state.searchResults = state.data.filter(title => {
+          return title.title.toLowerCase().includes(payload)  
+      })
+     }
+      else{
+        state.searchResults = []
+      }
+      
+    },
+    clearSearchField(state){
+      state.searchResults = []
+    },
   },
   actions: {
+    updateSearchResult(context, payload){
+      context.commit('updateSearchResult', payload)
+    },
+    clearSearchField(context){
+      context.commit('clearSearchField')
+    },
   },
   modules: {
   },
