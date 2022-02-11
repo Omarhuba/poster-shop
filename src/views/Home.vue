@@ -7,9 +7,9 @@
     </div>
 </template>
 <script>
-import Main from '../components/Main.vue';
-import Footer from "./Footer.vue";
-import Header from './Header.vue';
+import Main from '@/components/Main.vue';
+import Footer from "@/components/Footer.vue";
+import Header from '@/components/Header.vue';
 export default {
     components: {
         Footer,
@@ -25,6 +25,8 @@ body{
 }
 .home {
     height: 100%;
+    width: 1440px;
+    margin: auto;
 }
 </style>
 

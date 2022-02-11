@@ -1,12 +1,19 @@
 <template>
   <div class="header">
       <article class="article">
-          <img src="@/assets/menu.png"  alt="">
+        <div class="dropdown">
+        <button class="dropbtn"><img src="@/assets/menu.png"  alt=""></button>
+        <div class="dropdown-content">
+        <router-link to="/">Home</router-link> 
+        <router-link to="/about">About</router-link>
+        <router-link to="/contact">Contact</router-link>
+        </div>
+        </div>
           <h1 class="heading">Poster Shop</h1>
           <input type="text" name="" class="input" placeholder="  sök post med title"
           v-model="search" @input="updateSearchReasult(search)"/>
           <span  class="input" v-if="searchResults">
-          <router-link :to="'/' " class="search-result" v-for="post of searchResults" :key="post.id">{{post.title}}</router-link> 
+          <router-link :to="'/Home/poster/'+ post.id" class="search-result" v-for="post of searchResults" :key="post.id">{{post.title}}</router-link> 
           </span>
           <img src="@/assets/ninjahead.svg" class="image" alt="">
       </article>    
@@ -59,7 +66,7 @@ export default {
 }
 .article .image{
     align-self: center;
-    margin-top: 10.833rem;
+    margin-top: 8.66rem;
 
 }
 input{
@@ -68,4 +75,41 @@ input{
     height: 40px;
     border-radius: 20px;
 }
+.dropbtn {
+  background-color: transparent;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  min-width: 80px;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: black;
+     color: white;
+     cursor: pointer;
+     }
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    }
 </style>
