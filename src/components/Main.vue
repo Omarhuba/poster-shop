@@ -36,9 +36,8 @@ ul{
     display: grid;
     grid-template-columns: repeat(3,1fr);
     grid-gap: 4rem;
-    padding: 5rem 18rem;
+    padding: 2rem 18rem;
     width: 300px;
-    margin: 0;
     li{
         list-style: none;
     }
