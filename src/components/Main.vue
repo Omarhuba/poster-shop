@@ -1,6 +1,7 @@
 <template>
     <div class="main">
         <ul>
+
             <router-link
                 :to="'/Home/poster/' + data.id"
                 v-for="data in data"
@@ -15,6 +16,7 @@
             </router-link>
         </ul>
     </div>
+
 </template>
 
 <script>
@@ -22,12 +24,26 @@ export default {
     // data(){return{
     //     Data: [...this.$store.state.data],
     // }},
-    computed: {
-        data() {
-            return this.$store.state.data;
+
+
+    computed:{
+        data(){
+           return this.$store.state.data
         },
+        poster(){
+            return this.$store.getters.currentPage
+        }
     },
-};
+    methods:{
+        prev(){
+            this.$store.commit('previousPage')
+        },
+        next(){
+            this.$store.commit('nextPage')
+        }
+    }
+}
+
 </script>
 
 <style scoped lang="scss">
@@ -69,4 +85,17 @@ ul {
         cursor: pointer;
     }
 }
+
+.pagination{
+    display: flex;
+    justify-content: center;
+    button{
+        width: 100px;
+        height: 30px;
+        border: none;
+        border-radius: 5px;
+        margin: 1rem;
+    }
+}
 </style>
+
