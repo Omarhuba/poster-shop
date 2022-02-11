@@ -1,7 +1,7 @@
 <template>
     <div class="contact">
     <h3>Contact Form</h3>
-    <form action="/" class="form">
+    <form action="" class="form">
     <label for="fname">First Name</label>
     <input type="text" id="fname" name="firstname" placeholder="Your name..">
     <label for="lname">Last Name</label>
@@ -14,7 +14,11 @@
     </select>
     <label for="subject">Subject</label>
     <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
-    <button class="button">Submit</button>
+    <button class="button">
+        <router-link to="/">
+    Submit
+        </router-link>
+    </button>
   </form>
 </div>
 </template>
