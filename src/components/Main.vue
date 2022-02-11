@@ -90,7 +90,7 @@ ul {
         border: none;
         background-color: red;
         color: white;
-        font-weight: 800;
+        font-weight: 600;
         cursor: pointer;
     }
 }
