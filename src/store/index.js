@@ -3,13 +3,22 @@ import Vuex from 'vuex'
 import Data from '@/assets/data.json'
 Vue.use(Vuex)
 
+const PAGE_SIZE = 6
+
 export default new Vuex.Store({
   state: {
     data:[...Data],
     searchResults: [],
+    page : 1,
   },
   mutations: {
-    updateSearchResult(state, payload){
+    previousPage(state){
+      state.page --
+    },
+    nextPage(state){
+      state.page ++
+    },
+      updateSearchResult(state, payload){
       
       if(payload.length > 1){
         state.searchResults = state.data.filter(title => {
@@ -34,5 +43,12 @@ export default new Vuex.Store({
     },
   },
   modules: {
+  },
+  getters:{
+    currentPage(state){
+      return state.data.filter((_,index) =>
+      index >= (state.page-1) * PAGE_SIZE &&
+      index < (state.page) * PAGE_SIZE)
+    }
   }
 })
