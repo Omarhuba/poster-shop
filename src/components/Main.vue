@@ -1,14 +1,20 @@
 <template>
-  <div class="main">
+    <div class="main">
         <ul>
-            <li v-for="data in data" :key="data.id">
-                <img :src="require(`@/assets/${data.img}.png`)" alt="img">
-                <h3> {{data.title}} </h3>
-                <p> {{data.summery}} </p>
-                <button>Oh,take my money!</button>
-            </li>
+            <router-link
+                :to="'/Home/poster/' + data.id"
+                v-for="data in data"
+                :key="data.id"
+            >
+                <li>
+                    <img :src="require(`@/assets/${data.img}.png`)" alt="img" />
+                    <h3>{{ data.title }}</h3>
+                    <p>{{ data.summery }}</p>
+                    <button>Oh,take my money!</button>
+                </li>
+            </router-link>
         </ul>
-  </div>
+    </div>
 </template>
 
 <script>
@@ -16,36 +22,43 @@ export default {
     // data(){return{
     //     Data: [...this.$store.state.data],
     // }},
-    computed:{
-        data(){
-           return this.$store.state.data
-        }
-        
-    }
-}
+    computed: {
+        data() {
+            return this.$store.state.data;
+        },
+    },
+};
 </script>
 
 <style scoped lang="scss">
-.main{
+body {
+    h3,
+    p {
+        text-decoration: none;
+    }
+}
+
+.main {
     width: 1440px;
     height: 100%;
     background-color: black;
     color: white;
 }
-ul{
+ul {
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
     grid-gap: 4rem;
     padding: 5rem 18rem;
     width: 300px;
     margin: 0;
-    li{
+    li {
         list-style: none;
+        color: white;
     }
-    img{
-    width: 250px;
+    img {
+        width: 250px;
     }
-    button{
+    button {
         width: 150px;
         height: 30px;
         border-radius: 5px;
@@ -55,6 +68,5 @@ ul{
         font-weight: 800;
         cursor: pointer;
     }
-
 }
 </style>
