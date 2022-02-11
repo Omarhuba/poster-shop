@@ -1,13 +1,19 @@
 <template>
   <div class="main">
         <ul>
-            <li v-for="data in data" :key="data.id">
+            <li v-for="data in poster" :key="data.id">
                 <img :src="require(`@/assets/${data.img}.png`)" alt="img">
                 <h3> {{data.title}} </h3>
                 <p> {{data.summery}} </p>
                 <button>Oh,take my money!</button>
             </li>
         </ul>
+        <article class="pagination">
+            <span>
+                <button @click="prev">Previuos</button>
+                <button @click="next">Next</button>
+            </span>
+        </article>
   </div>
 </template>
 
@@ -19,8 +25,18 @@ export default {
     computed:{
         data(){
            return this.$store.state.data
+        },
+        poster(){
+            return this.$store.getters.currentPage
         }
-        
+    },
+    methods:{
+        prev(){
+            this.$store.commit('previousPage')
+        },
+        next(){
+            this.$store.commit('nextPage')
+        }
     }
 }
 </script>
@@ -55,5 +71,16 @@ ul{
         cursor: pointer;
     }
 
+}
+.pagination{
+    display: flex;
+    justify-content: center;
+    button{
+        width: 100px;
+        height: 30px;
+        border: none;
+        border-radius: 5px;
+        margin: 1rem;
+    }
 }
 </style>
