@@ -4,7 +4,7 @@
 
             <router-link
                 :to="'/Home/poster/' + data.id"
-                v-for="data in data"
+                v-for="data in poster"
                 :key="data.id"
             >
                 <li>
