@@ -3,7 +3,7 @@
         <ul>
 
             <router-link
-                :to="'/Home/poster/' + data.id"
+                :to="'/Home/poster/'+ data.id"
                 v-for="data in poster"
                 :key="data.id"
             >
@@ -71,8 +71,9 @@ ul {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 4rem;
-    padding: 2rem 18rem;
+    padding: 4rem 18rem;
     width: 300px;
+    margin-top: 0px;
    
     li {
         list-style: none;
@@ -83,8 +84,8 @@ ul {
         width: 250px;
     }
     button {
-        width: 160px;
-        height: 30px;
+        width: 180px;
+        height: 50px;
         border-radius: 5px;
         border: none;
         background-color: red;

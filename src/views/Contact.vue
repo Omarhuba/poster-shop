@@ -1,15 +1,22 @@
 <template>
     <div class="contact">
-        <form action="/">
-            <h1>Contact Us</h1>
-            <div>
-                <input type="text" placeholder="Name" />
-                <input type="email" placeholder="E-mail" />
-            </div>
-            <textarea cols="30" rows="10" placeholder="Message"></textarea>
-            <button>SUBMIT</button>
-        </form>
-    </div>
+    <h3>Contact Form</h3>
+    <form action="/" class="form">
+    <label for="fname">First Name</label>
+    <input type="text" id="fname" name="firstname" placeholder="Your name..">
+    <label for="lname">Last Name</label>
+    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+    <label for="country">Post</label>
+    <select>
+      <option value="">ITHS</option>
+      <option value="">David</option>
+      <option value="">Lotta</option>
+    </select>
+    <label for="subject">Subject</label>
+    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+    <button class="button">Submit</button>
+  </form>
+</div>
 </template>
 
 <script>
@@ -17,40 +24,40 @@ export default {};
 </script>
 
 <style lang="scss" scoped>
-.contact {
-    display: flex;
-    align-items: center;
-    background-color: black;
-    height: 100vh;
-}
-form {
-    display: flex;
-    flex-direction: column;
-    width: 80%;
-    margin: auto;
-    div {
+   
+ .contact {
         display: flex;
-        justify-content: space-between;
-    }
-    input {
-        margin: 0.5rem;
-        padding: 0.5rem;
-        width: 50%;
-    }
-    textarea {
-        margin: 0.5rem;
-        padding: 0.5rem;
-    }
-    h1 {
-        color: white;
-        text-align: center;
-    }
-    button {
-        width: fit-content;
-        align-self: flex-end;
-        margin-right: 0.5rem;
-        padding: 0.5rem;
-        background-color: coral;
-    }
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 20px;
 }
+.form{
+    width: 700px;
+    justify-content: center;
+    align-items: center;
+}
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+button {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
 </style>
